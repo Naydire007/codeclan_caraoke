@@ -3,7 +3,8 @@ from classes.Guest import Guest
 
 
 class Room:
-    def __init__(self,room_name):
+    def __init__(self,room_name, room_price):
+        self.room_price = room_price
         self.room_name = room_name
         self.guest_list = []
         self.songs_list = []
@@ -17,10 +18,9 @@ class Room:
         # self.VIP = VIP
         # self.song_list_VIP = []
        
-        # self.room_limit = 6
-        # self.VIP_limit = 14
-        self.room_price = 10
-        self.VIP_price = 20
+        self.room_limit = 6
+        self.VIP_limit = 14
+       
 
     def add_guest(self,guest):
         self.guest_list.append(guest)
@@ -38,5 +38,11 @@ class Room:
     def add_song(self,song):
         self.songs_list.append(song.dictionary)
 
-    # def add_song(self):
-    #     self.songs_list.append(Song["music"]["song1"]["Beyond the matrix"])
+    def room_space(self,guest):
+        if len(self.guest_list) == self.room_limit:
+            return "No space"
+
+    def room_space_VIP(self,guest):
+        if len(self.guest_list) == self.room_space_VIP:
+            return "No space"
+

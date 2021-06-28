@@ -5,11 +5,10 @@ class Guest:
         favorite_song = favorite_song
        
 
-    def pay_entry(self,room):
-        self.wallet -= room.price
+    def pay_entry(self,amount):
+        self.wallet -= amount
 
-    def pay_entry_VIP(self,room):
-        self.wallet -= room.VIP_price
+
   
         
 
